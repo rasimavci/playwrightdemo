@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 50%; margin-bottom: 20px; }
+        th, td { border: 1px solid #333; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        ul, ol { margin-bottom: 20px; }
+        button { padding: 8px 12px; }
+        input { margin-bottom: 10px; display: block; }
+    </style>
+</head>
+<body>
+    <h1>Test Page</h1>
+    <p>This page contains elements for automated testing with test tools.</p>
+
+    <h2>Table Example</h2>
+    <table id="test-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alice</td>
+                <td>25</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>30</td>
+                <td>London</td>
+            </tr>
+            <tr>
+                <td>Charlie</td>
+                <td>22</td>
+                <td>Paris</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>List Examples</h2>
+    <h3>Unordered List</h3>
+    <ul id="ulist">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+    </ul>
+
+    <h3>Ordered List</h3>
+    <ol id="olist">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+    </ol>
+
+    <h2>Form Elements</h2>
+    <form id="test-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <input type="checkbox" id="subscribe" name="subscribe">
+        <label for="subscribe">Subscribe to newsletter</label><br>
+
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>
+
+    <h2>Other Elements</h2>
+    <p><a href="https://playwright.dev/" id="example-link">Visit playwright</a></p>
+    <p><img src="https://via.placeholder.com/150" alt="Placeholder Image" id="test-image"></p>
+    <button id="alert-btn">Click me for alert</button>
+
+    <script>
+        document.getElementById('alert-btn').addEventListener('click', () => {
+            alert('Button clicked!');
+        });
+
+        document.getElementById('test-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Form submitted!');
+        });
+    </script>
+</body>
+</html>

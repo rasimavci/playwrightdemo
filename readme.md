@@ -3,12 +3,26 @@
 ## commands
 
 npx playwright test HomePageTest --headed
+
 npx playwright test example --headed
+
+### Run a set of test files
+npx playwright test tests/todo-page/ tests/landing-page/
+
+
+### Run tests for a specific project
+npx playwright test --project=chromium
 
 npx playwright show-report
 
 npx playwright test --ui
+
 npx playwright --version
+
+## trace viewer
+
+npx playwright show-trace path/to/trace.zip
+
 
 # codegen
 ## install
