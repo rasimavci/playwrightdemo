@@ -23,8 +23,15 @@ npx playwright --version
 
 npx playwright show-trace path/to/trace.zip
 
+# Codegen
 
-# codegen
+## Running Codegen
+
+npx playwright codegen
+
+
+
+# .NET
 ## install
 dotnet new mstest -n PlaywrightTests
 cd PlaywrightTests
@@ -39,6 +46,7 @@ dotnet build
 ## install browsers
 pwsh bin/Debug/net8.0/playwright.ps1 install
 
-## Running Codegen
-
+## Run
 pwsh bin/Debug/net8.0/playwright.ps1 codegen demo.playwright.dev/todomvc
+
+
