@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+test.describe.configure({ mode: 'serial' }); 
+
 test.describe('Petstore CRUD API Tests', () => {
 
   let petId: number;
