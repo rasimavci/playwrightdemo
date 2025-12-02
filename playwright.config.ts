@@ -47,13 +47,25 @@ export default defineConfig({
 
   },
 
+ // timeout: 120,
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
+/*
+    {
+      name: 'Smoke',
+      testMatch: /.*smoke.spec.ts/,
+      retries: 0,
+    },
+    {
+      name: 'Default',
+      testIgnore: /.*smoke.spec.ts/,
+      retries: 2,
+    },
+*/
  /*    {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },

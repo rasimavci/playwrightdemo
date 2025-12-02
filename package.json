@@ -9,6 +9,11 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.55.0",
+    "@types/debug": "^4.1.12",
     "@types/node": "^24.3.1"
+  },
+  "dependencies": {
+    "playwright-extra": "^4.3.6",
+    "playwright-extra-plugin-stealth": "^0.0.1"
   }
 }

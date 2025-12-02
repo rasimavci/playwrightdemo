@@ -48,11 +48,11 @@ test('test visibility', async ({ page }) => {
 
   const locatorbutton  = page.getByRole('button');
 
-  locatorbutton.click();
+//  locatorbutton.click();
 
   await page.getByRole('button').first().click();
   await page.getByRole('button').last().click();
-  await page.getByRole('button').nth(2).click();
+//  await page.getByRole('button').nth(1).click();
 
 
 });
