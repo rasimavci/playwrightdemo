@@ -1,4 +1,4 @@
-# training codes for playwright
+# Playing with playwright
 
 ## commands
 

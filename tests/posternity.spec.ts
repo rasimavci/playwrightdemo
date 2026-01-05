@@ -14,7 +14,6 @@ test('test teplates link', async ({ page }) => {
 
 
 
-
 test('test elements', async ({ page }) => {
   await page.goto('https://posternity.ai/test-page');
   await expect(page.getByRole('heading', { name: 'Table Example' })).toBeVisible();
@@ -58,18 +57,13 @@ test('test visibility', async ({ page }) => {
 });
 
 
-
-
 test('test text', async ({ page }) => {
   await page.goto('https://posternity.ai/test-page');
   await page.getByText('Test Page This page contains').click();
   await expect(page.locator('body')).toContainText('Table Example');
-
   await expect(page.locator('tbody')).toContainText('Alice');
   await expect(page.locator('tbody')).toContainText('25');
   await expect(page.locator('tbody')).toContainText('New York');
-
-
 });
 
 test('test table', async ({ page }) => {
