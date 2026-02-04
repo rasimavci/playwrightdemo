@@ -12,8 +12,8 @@ test('test', async ({ page }) => {
 
 
 test('join test', async ({ page }) => {
-  await page.goto('https://standardflow.onrender.com/');
-  await page.getByRole('link', { name: 'Join Now' }).click();
+  await page.goto('https://standardflow.onrender.com/onboarding');
+//  await page.getByRole('link', { name: 'Join Now' }).click();
 
   await page.waitForTimeout(1000);
 
@@ -41,6 +41,8 @@ test('join test', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Your Startup Inc.' }).press('Tab');
   await page.getByRole('textbox', { name: 'https://yourcompany.com' }).fill('posternity.ai');
 
+
+
   /*
     await page.locator('label').filter({ hasText: 'Click to upload pitch deckPDF' }).click();
   // Drag & drop alanına tıklayıp file chooser'ı aç
@@ -63,6 +65,8 @@ const fileInput = page.locator('input[type="file"]');
 
 await fileInput.setInputFiles('C:\\youtube.txt');
 
+await page.waitForTimeout(2000);
+await page.getByRole('button', { name: 'Complete' }).click();
 
 
 });
