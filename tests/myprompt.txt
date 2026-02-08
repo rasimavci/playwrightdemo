@@ -1,0 +1,6 @@
+Great exploration. Now, based on these findings, navigate specifically to the 'Company Actions' section (you might need to find it in the sidebar or menu). 
+Create a TypeScript Playwright test file named tests/admin/customerportal/company-actions.spec.ts that verifies the visibility and clickable state of these actions using the selectors you just found. 
+Ensure strict mode compliance
+
+
+use mcp for aan explotariy testing for Admin Actions -> Project Actions panel on http://localhost:5174/
