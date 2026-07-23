@@ -5,7 +5,7 @@ test.describe('Cross-Account Validation and Security', () => {
   
   // Helper function for login
   async function loginUser(page, email: string) {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     await page.getByLabel('Email').fill(email);
     await page.getByLabel('Password', { exact: true }).fill(PASSWORD);
     await page.getByRole('button', { name: 'Sign In' }).click();
@@ -120,7 +120,7 @@ test.describe('Cross-Account Validation and Security', () => {
     
     // Open new tab and try to access
     const newPage = await context.newPage();
-    await newPage.goto('http://localhost:5174/');
+    await newPage.goto('http://localhost:5173/');
     
     // Session should persist in new tab (same context)
     await newPage.waitForTimeout(1000);

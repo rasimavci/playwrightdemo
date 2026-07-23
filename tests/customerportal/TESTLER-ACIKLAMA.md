@@ -230,7 +230,7 @@ Login sayfasının performans metriklerini ölçer.
 ```typescript
 // ✅ Sayfa yükleme süresi ölçümü
 const startTime = Date.now();
-await page.goto('http://localhost:5174/');
+await page.goto('http://localhost:5173/');
 await page.waitForLoadState('domcontentloaded');
 const loadTime = Date.now() - startTime;
 expect(loadTime).toBeLessThan(3000);
@@ -351,7 +351,7 @@ Access: TÜM sistemde tam yetki
 ```typescript
 // ✅ beforeEach ile otomatik login
 test.beforeEach(async ({ page }) => {
-  await page.goto('http://localhost:5174/');
+  await page.goto('http://localhost:5173/');
   await page.getByLabel('Email').fill(ADMIN_EMAIL);
   await page.getByLabel('Password', { exact: true }).fill(PASSWORD);
   await page.getByRole('button', { name: 'Sign In' }).click();
@@ -485,7 +485,7 @@ Farklı kullanıcılar arası izolasyon ve güvenlik testleri.
 ```typescript
 // ✅ Helper fonksiyon ile kod tekrarını azalt
 async function loginUser(page, email: string) {
-  await page.goto('http://localhost:5174/');
+  await page.goto('http://localhost:5173/');
   await page.getByLabel('Email').fill(email);
   await page.getByLabel('Password', { exact: true }).fill(PASSWORD);
   await page.getByRole('button', { name: 'Sign In' }).click();
@@ -754,7 +754,7 @@ if (await element.isVisible({ timeout: 5000 }).catch(() => false)) {
 // ✅ İYİ: beforeEach ile setup
 test.describe('Customer Tests', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     // Login logic
   });
 
@@ -909,7 +909,7 @@ npx playwright test tests/customerportal --reporter=html
 ## 📝 Notlar
 
 - **Test Verileri:** Tüm test kullanıcıları `Demo123!` şifresini kullanır
-- **Test Ortamı:** `http://localhost:5174/`
+- **Test Ortamı:** `http://localhost:5173/`
 - **Toplam Test Sayısı:** 100+ test senaryosu
 - **Test Coverage:** Login, Auth, Security, Accessibility, Performance, Responsive
 

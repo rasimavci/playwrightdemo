@@ -4,7 +4,7 @@ test.describe('Customer Portal - Performance', () => {
   test('should load page within acceptable time', async ({ page }) => {
     const startTime = Date.now();
     
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     await page.waitForLoadState('domcontentloaded');
     
     const loadTime = Date.now() - startTime;
@@ -14,7 +14,7 @@ test.describe('Customer Portal - Performance', () => {
   });
 
   test('should load all critical resources', async ({ page }) => {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     
     // Wait for page to be fully loaded
     await page.waitForLoadState('networkidle');
@@ -31,7 +31,7 @@ test.describe('Customer Portal - Performance', () => {
       setTimeout(() => route.continue(), 100);
     });
     
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     
     // Should still load successfully
     await expect(page.getByRole('button', { name: 'Sign In' })).toBeVisible({ timeout: 10000 });
@@ -46,7 +46,7 @@ test.describe('Customer Portal - Performance', () => {
       }
     });
     
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     await page.waitForLoadState('networkidle');
     
     // Should have no critical console errors
@@ -61,7 +61,7 @@ test.describe('Customer Portal - Performance', () => {
   test('should not have memory leaks on repeated navigation', async ({ page }) => {
     // Navigate to page multiple times
     for (let i = 0; i < 5; i++) {
-      await page.goto('http://localhost:5174/');
+      await page.goto('http://localhost:5173/');
       await page.waitForLoadState('networkidle');
     }
     
@@ -70,7 +70,7 @@ test.describe('Customer Portal - Performance', () => {
   });
 
   test('should handle form submission without lag', async ({ page }) => {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     
     await page.getByLabel('Email').fill('test@example.com');
     await page.getByLabel('Password', { exact: true }).fill('password123');
@@ -88,7 +88,7 @@ test.describe('Customer Portal - Performance', () => {
   });
 
   test('should not block UI during form interaction', async ({ page }) => {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     
     // Type in email field
     await page.getByLabel('Email').fill('test@example.com');
@@ -107,7 +107,7 @@ test.describe('Customer Portal - Performance', () => {
       }
     });
     
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     await page.waitForLoadState('networkidle');
     
     // Check that images were loaded

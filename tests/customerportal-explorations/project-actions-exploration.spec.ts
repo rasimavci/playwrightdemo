@@ -5,8 +5,8 @@ test.describe('Project Actions Panel Exploration', () => {
     console.log('\n=== STARTING PROJECT ACTIONS PANEL EXPLORATION ===\n');
     
     // Navigate to the application
-    console.log('1. Navigating to http://localhost:5174');
-    await page.goto('http://localhost:5174');
+    console.log('1. Navigating to http://localhost:5173');
+    await page.goto('http://localhost:5173/');
     await page.waitForLoadState('networkidle');
     
     // Login as admin

@@ -6,7 +6,7 @@ test.describe('EFSORA ADMIN - AI Chat Features', () => {
 
   test.beforeEach(async ({ page }) => {
     // Login as EFSORA ADMIN
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     await page.getByLabel('Email').fill(ADMIN_EMAIL);
     await page.getByLabel('Password', { exact: true }).fill(PASSWORD);
     await page.getByRole('button', { name: 'Sign In' }).click();

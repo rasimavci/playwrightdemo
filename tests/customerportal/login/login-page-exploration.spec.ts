@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Login Page Exploration', () => {
   test('explore login page elements', async ({ page }) => {
     // Navigate to login page
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     await page.waitForLoadState('networkidle');
     
     // Take a screenshot for reference

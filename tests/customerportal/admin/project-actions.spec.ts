@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Project Actions Panel Tests', () => {
   test.beforeEach(async ({ page }) => {
     // Navigate and login
-    await page.goto('http://localhost:5174');
+    await page.goto('http://localhost:5173/');
     await page.waitForLoadState('networkidle');
     
     await page.getByLabel('Email', { exact: true }).fill('admin@efsora.com');

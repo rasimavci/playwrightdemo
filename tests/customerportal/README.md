@@ -1,6 +1,6 @@
 # Customer Portal Test Suite
 
-This directory contains comprehensive UI tests for the Customer Portal application running at http://localhost:5174/
+This directory contains comprehensive UI tests for the Customer Portal application running at http://localhost:5173/
 
 ## Test Files
 

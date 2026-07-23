@@ -6,7 +6,7 @@ test.describe('CUSTOMER Account 1 - customeradmin@apex.com', () => {
 
   test.beforeEach(async ({ page }) => {
     // Login as Apex customer admin
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     await page.getByLabel('Email').fill(CUSTOMER_EMAIL);
     await page.getByLabel('Password',{ exact: true }).fill(PASSWORD);
     await page.getByRole('button', { name: 'Sign In' }).click();
@@ -17,7 +17,7 @@ test.describe('CUSTOMER Account 1 - customeradmin@apex.com', () => {
 
   test('should login successfully with customer credentials', async ({ page }) => {
     // Verify we're logged in
-    await expect(page).toHaveURL('http://localhost:5174/');
+    await expect(page).toHaveURL('http://localhost:5173/');
     
     await page.waitForLoadState('networkidle');
   });
@@ -119,7 +119,7 @@ test.describe('CUSTOMER Account 1 - customeradmin@apex.com', () => {
       await logoutButton.click();
       
       // Should redirect to login page
-      await expect(page).toHaveURL('http://localhost:5174/', { timeout: 5000 });
+      await expect(page).toHaveURL('http://localhost:5173/', { timeout: 5000 });
     }
   });
 

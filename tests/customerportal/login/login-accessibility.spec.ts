@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Customer Portal - Login Accessibility', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
   });
 
   test('should have proper ARIA labels', async ({ page }) => {

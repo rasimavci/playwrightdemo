@@ -3,7 +3,7 @@ import { test, expect, devices } from '@playwright/test';
 test.describe('Customer Portal - Responsive Design', () => {
   test('should display correctly on desktop', async ({ page }) => {
     await page.setViewportSize({ width: 1920, height: 1080 });
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
 
     await expect(page.getByText('Welcome')).toBeVisible();
     await expect(page.getByLabel('Email')).toBeVisible();
@@ -13,7 +13,7 @@ test.describe('Customer Portal - Responsive Design', () => {
 
   test('should display correctly on tablet', async ({ page }) => {
     await page.setViewportSize({ width: 768, height: 1024 });
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
 
     await expect(page.getByText('Welcome')).toBeVisible();
     await expect(page.getByLabel('Email')).toBeVisible();
@@ -23,7 +23,7 @@ test.describe('Customer Portal - Responsive Design', () => {
 
   test('should display correctly on mobile', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
 
     await expect(page.getByText('Welcome')).toBeVisible();
     await expect(page.getByLabel('Email')).toBeVisible();
@@ -37,7 +37,7 @@ test.describe('Customer Portal - Responsive Design', () => {
     });
     const page = await context.newPage();
     
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
 
     await expect(page.getByText('Welcome')).toBeVisible();
     await expect(page.getByLabel('Email')).toBeVisible();
@@ -52,7 +52,7 @@ test.describe('Customer Portal - Responsive Design', () => {
     });
     const page = await context.newPage();
     
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
 
     await expect(page.getByText('Welcome')).toBeVisible();
     await expect(page.getByLabel('Email')).toBeVisible();
@@ -63,7 +63,7 @@ test.describe('Customer Portal - Responsive Design', () => {
 
   test('should be usable on small screens', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 568 });
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
 
     // All elements should still be visible and clickable
     const emailInput = page.getByLabel('Email');
@@ -82,7 +82,7 @@ test.describe('Customer Portal - Responsive Design', () => {
 
   test('should not have horizontal scrollbar on mobile', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
 
     // Check if page width exceeds viewport
     const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
@@ -93,7 +93,7 @@ test.describe('Customer Portal - Responsive Design', () => {
 
   test('should scale images appropriately', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
 
     const logo = page.locator('img').first();
     const box = await logo.boundingBox();

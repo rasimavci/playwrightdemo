@@ -5,7 +5,7 @@ test.describe('Admin Interface Deep Exploration', () => {
     console.log('\n=== DEEP ADMIN EXPLORATION ===\n');
     
     // Navigate and login
-    await page.goto('http://localhost:5174');
+    await page.goto('http://localhost:5173/');
     await page.waitForLoadState('networkidle');
     
     const emailField = page.locator('input[type="email"]').first();

@@ -9,7 +9,7 @@ import { test, expect } from '@playwright/test';
 
 // Helper function to login
 async function login(page, email: string, password: string = 'Demo123!') {
-  await page.goto('http://localhost:5174/');
+  await page.goto('http://localhost:5173/');
   await page.getByLabel('Email').fill(email);
   await page.getByLabel('Password', { exact: true }).fill(password);
   await page.getByRole('button', { name: 'Sign In' }).click();
@@ -32,7 +32,7 @@ test.describe('Security Tests - SQL Injection Prevention', () => {
   ];
 
   test('Login form should prevent SQL injection in email field', async ({ page }) => {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     
     for (const payload of sqlInjectionPayloads) {
       await page.getByLabel('Email').clear();
@@ -116,7 +116,7 @@ test.describe('Security Tests - XSS Prevention', () => {
   ];
 
   test('Login form should sanitize XSS in email field', async ({ page }) => {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     
     for (const payload of xssPayloads) {
       await page.getByLabel('Email').clear();
@@ -260,7 +260,7 @@ test.describe('Security Tests - LDAP Injection Prevention', () => {
   ];
 
   test('Login should prevent LDAP injection', async ({ page }) => {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     
     for (const payload of ldapInjectionPayloads) {
       await page.getByLabel('Email').fill(payload);

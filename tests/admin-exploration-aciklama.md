@@ -5,7 +5,7 @@
 **Dosya:** `admin-exploration.spec.ts`  
 **Test Sayısı:** 1 adet kapsamlı keşif (exploration) testi  
 **Test Türü:** Interface Discovery & Mapping  
-**Hedef URL:** http://localhost:5174  
+**Hedef URL:** http://localhost:5173  
 **Test Kullanıcısı:** admin@efsora.com / Demo123!
 
 ---
@@ -27,7 +27,7 @@ Bu test, **otomatik interface keşif testi** (automated UI exploration) yapar. M
 
 ### 1. Navigasyon ve İlk Screenshot (Satır 6-13)
 ```typescript
-await page.goto('http://localhost:5174');
+await page.goto('http://localhost:5173/');
 await page.waitForLoadState('networkidle');
 await page.screenshot({ path: 'test-results/admin-exploration-initial.png', fullPage: true });
 ```
@@ -343,7 +343,7 @@ Test çalıştırıldığında detaylı console log üretir:
 ```
 === STARTING ADMIN INTERFACE EXPLORATION ===
 
-1. Navigating to http://localhost:5174
+1. Navigating to http://localhost:5173
    - Initial page screenshot saved
 
 2. Attempting login with admin@efsora.com / Demo123!
@@ -358,7 +358,7 @@ Test çalıştırıldığında detaylı console log üretir:
 ================================================================================
 
 PAGE TITLE: EFSORA Admin Panel
-CURRENT URL: http://localhost:5174/dashboard
+CURRENT URL: http://localhost:5173/dashboard
 
 --- NAVIGATION MENU ITEMS ---
   - "Dashboard" -> /dashboard

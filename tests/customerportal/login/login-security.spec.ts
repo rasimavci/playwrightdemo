@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Customer Portal - Login Security', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
   });
 
   test('should handle invalid credentials gracefully', async ({ page }) => {

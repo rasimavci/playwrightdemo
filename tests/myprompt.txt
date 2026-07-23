@@ -3,4 +3,4 @@ Create a TypeScript Playwright test file named tests/admin/customerportal/compan
 Ensure strict mode compliance
 
 
-use mcp for aan explotariy testing for Admin Actions -> Project Actions panel on http://localhost:5174/
+use mcp for aan explotariy testing for Admin Actions -> Project Actions panel on http://localhost:5173/

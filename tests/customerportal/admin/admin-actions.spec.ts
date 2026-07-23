@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Admin Actions - Comprehensive Tests', () => {
   const ADMIN_EMAIL = 'admin@efsora.com';
   const PASSWORD = 'Demo123!';
-  const BASE_URL = 'http://localhost:5174';
+  const BASE_URL = 'http://localhost:5173/';
 
   test.beforeEach(async ({ page }) => {
     // Login as admin

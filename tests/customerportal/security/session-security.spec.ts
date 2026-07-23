@@ -9,7 +9,7 @@ import { test, expect } from '@playwright/test';
 
 // Helper function to login
 async function login(page, email: string, password: string = 'Demo123!') {
-  await page.goto('http://localhost:5174/');
+  await page.goto('http://localhost:5173/');
   await page.getByLabel('Email').fill(email);
   await page.getByLabel('Password', { exact: true }).fill(password);
   await page.getByRole('button', { name: 'Sign In' }).click();
@@ -31,7 +31,7 @@ test.describe('Security Tests - Session Management', () => {
       await page.waitForTimeout(1000);
     } else {
       // Navigate to logout URL if button not found
-      await page.goto('http://localhost:5174/logout');
+      await page.goto('http://localhost:5173/logout');
     }
     
     // Verify session is cleared
@@ -148,7 +148,7 @@ test.describe('Security Tests - Session Management', () => {
       await context2.addCookies([sessionCookie]);
       
       const page2 = await context2.newPage();
-      await page2.goto('http://localhost:5174/dashboard');
+      await page2.goto('http://localhost:5173/dashboard');
       
       await page2.waitForTimeout(2000);
       
@@ -232,7 +232,7 @@ test.describe('Security Tests - CSRF Protection', () => {
 
 test.describe('Security Tests - Rate Limiting', () => {
   test('Login endpoint should have rate limiting', async ({ page }) => {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     
     const attempts = 10;
     let blockedCount = 0;
@@ -289,7 +289,7 @@ test.describe('Security Tests - Rate Limiting', () => {
 
 test.describe('Security Tests - Headers Security', () => {
   test('Response should include security headers', async ({ page }) => {
-    const response = await page.goto('http://localhost:5174/');
+    const response = await page.goto('http://localhost:5173/');
     
     if (response) {
       const headers = response.headers();
@@ -348,7 +348,7 @@ test.describe('Security Tests - Password Security', () => {
       });
     });
     
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     await page.getByLabel('Email').fill('test@example.com');
     await page.getByLabel('Password', { exact: true }).fill('MySecretPassword123!');
     await page.getByRole('button', { name: 'Sign In' }).click();
@@ -374,7 +374,7 @@ test.describe('Security Tests - Password Security', () => {
   });
 
   test('Password field should have autocomplete disabled', async ({ page }) => {
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     
     const passwordInput = page.getByLabel('Password', { exact: true });
     const autocomplete = await passwordInput.getAttribute('autocomplete');
@@ -391,7 +391,7 @@ test.describe('Security Tests - Password Security', () => {
 test.describe('Security Tests - Information Disclosure', () => {
   test('Error pages should not reveal sensitive information', async ({ page }) => {
     // Try to access non-existent page
-    await page.goto('http://localhost:5174/nonexistent-page-12345');
+    await page.goto('http://localhost:5173/nonexistent-page-12345');
     
     await page.waitForTimeout(1000);
     
@@ -425,7 +425,7 @@ test.describe('Security Tests - Information Disclosure', () => {
   });
 
   test('Version numbers should not be exposed in headers', async ({ page }) => {
-    const response = await page.goto('http://localhost:5174/');
+    const response = await page.goto('http://localhost:5173/');
     
     if (response) {
       const headers = response.headers();

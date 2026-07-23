@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Login Page - UI and Functionality Tests', () => {
-  const LOGIN_URL = 'http://localhost:5174/';
+  const LOGIN_URL = 'http://localhost:5173/';
   
   test.beforeEach(async ({ page }) => {
     await page.goto(LOGIN_URL);
@@ -56,7 +56,7 @@ test.describe('Login Page - UI and Functionality Tests', () => {
   test('should toggle password visibility', async ({ page }) => {
     const passwordInput = page.getByLabel('Password', { exact: true });
     const showPasswordButton = page.getByRole('button', { name: 'Show password' });
-    
+    const hidePasswordButton = page.getByRole('button', { name: 'Hide password' });
     // Fill password
     await passwordInput.fill('TestPassword123!');
     
@@ -73,7 +73,7 @@ test.describe('Login Page - UI and Functionality Tests', () => {
     await expect(passwordInput).toHaveAttribute('type', 'text');
     
     // Click again to hide
-    await showPasswordButton.click();
+    await hidePasswordButton.click();
     await page.waitForTimeout(500);
     
     // Verify password is hidden again
@@ -105,7 +105,7 @@ test.describe('Login Page - UI and Functionality Tests', () => {
   });
 
   test('should successfully login with valid customer credentials', async ({ page }) => {
-    const CUSTOMER_EMAIL = 'sarah@apextechnologies.com';
+    const CUSTOMER_EMAIL = 'sarah.wilson@apex.com';
     const PASSWORD = 'Demo123!';
     
     // Fill in login credentials
@@ -130,7 +130,7 @@ test.describe('Login Page - UI and Functionality Tests', () => {
     // The form should show validation errors or prevent submission
     // Check if we're still on the login page
     await page.waitForTimeout(1000);
-    await expect(page).toHaveURL(LOGIN_URL);
+    await expect(page).toHaveURL(/login/);
   });
 
   test('should handle login with invalid credentials', async ({ page }) => {
@@ -145,7 +145,7 @@ test.describe('Login Page - UI and Functionality Tests', () => {
     await page.waitForTimeout(2000);
     
     // Should remain on login page
-    await expect(page).toHaveURL(LOGIN_URL);
+    await expect(page).toHaveURL(/login/);
   });
 
   test('should validate email format', async ({ page }) => {
@@ -159,7 +159,7 @@ test.describe('Login Page - UI and Functionality Tests', () => {
     await page.waitForTimeout(1000);
     
     // Should still be on login page due to validation
-    await expect(page).toHaveURL(LOGIN_URL);
+    await expect(page).toHaveURL(/login/);
   });
 
   test('should support keyboard navigation', async ({ page }) => {
